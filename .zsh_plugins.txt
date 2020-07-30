@@ -1,0 +1,7 @@
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/command-not-found
+robbyrussell/oh-my-zsh path:plugins/docker
+zsh-users/zsh-syntax-highlighting
+robbyrussell/oh-my-zsh path:lib
+robbyrussell/oh-my-zsh path:themes/gianu.zsh-theme
+# win0err/aphrodite-terminal-theme path:aphrodite.zsh-theme
