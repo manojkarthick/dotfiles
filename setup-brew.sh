@@ -21,3 +21,9 @@ brew install pyenv
 # Install goenv from the HEAD since the last homebrew release does not have golang versions 1.12+
 brew install --HEAD goenv
 
+# Install k3d for local docker based kubernetes clusters
+brew install k3d
+
+# Install Helm
+brew install helm
+
