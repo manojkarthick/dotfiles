@@ -1,0 +1,19 @@
+[pull]
+	rebase = true
+[user]
+	name = Manoj Karthick Selva Kumar
+	email = manojkarthick@ymail.com
+[alias]
+	unstage = reset HEAD --
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	ui = pull upstream integration 
+	um = pull upstream master
+	undo = reset --soft HEAD^
+	merged = branch --merged
+	cm = commit -m
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	dd = diff --check --dirstat --find-copies --find-renames --histogram --color
+	sl = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
