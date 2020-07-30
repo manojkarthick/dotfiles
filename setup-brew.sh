@@ -27,3 +27,6 @@ brew install k3d
 # Install Helm
 brew install helm
 
+# Install JQ
+brew install jq
+
