@@ -30,3 +30,6 @@ brew install helm
 # Install JQ
 brew install jq
 
+# Install Kube-PS1
+brew install kube-ps1
+
