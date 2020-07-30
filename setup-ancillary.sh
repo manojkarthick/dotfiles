@@ -11,3 +11,8 @@ curl -s "https://get.sdkman.io" | bash
 curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl"
 chmod u+x ./kubectl
 mv ./kubectl ~/bin/kubectl
+
+# Install Google cloud SDK and CLI
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-303.0.0-darwin-x86_64.tar.gz
+tar xvf google-cloud-sdk-303.0.0-darwin-x86_64.tar.gz
+mv google-cloud-sdk ~/bin/
