@@ -85,23 +85,23 @@ bindkey '\e\e[D' backward-word
 bindkey "^j" jump
 
 # ---------------------------------------- #
-#  Python and friends
+#  Language version managers
 # ---------------------------------------- #
+
+# NOTE: pyenv and goenv are lazy-loaded in the below commands
+# The reason the behavior has been changed is to reduce shell startup latency
+# Inspired by: https://carlosbecker.com/posts/speeding-up-zsh/
 
 pyenv() {
   eval "$(command pyenv init - zsh --no-rehash)"
   pyenv "$@"
 }
 
-
-# ---------------------------------------- #
-#  Golang and related tools
-# ---------------------------------------- #
-
 goenv() {
-	eval "$(goenv init -)"
+	eval "$(command goenv init - zsh)"
 	goenv "$@"
 }
+
 
 # ---------------------------------------- #
 #  SDKMAN
