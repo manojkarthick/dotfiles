@@ -1,16 +1,7 @@
 # ---------------------------------------- #
 # Exports and Paths
 # ---------------------------------------- #
-export PATH="$HOME/bin:/Users/manojkarthickselvakumar/Homebrew/bin:${PATH}:${HOME}/.krew/bin"
-
-# ---------------------------------------- #
-#  Oh My ZSH
-# ---------------------------------------- #
-# ZSH_THEME="gianu"
-# DISABLE_AUTO_UPDATE="true"
-# plugins=(kubectl helm docker git fzf command-not-found)
-# export ZSH="/Users/$USER/.oh-my-zsh"
-# source $ZSH/oh-my-zsh.sh
+export PATH="$HOME/bin:$HOME/Homebrew/bin:${PATH}"
 
 # ---------------------------------------- #
 #  Antibody
@@ -23,16 +14,16 @@ else
   compinit -C
 fi
 
-source ~/tools/antibody/.zsh_plugins.sh
+source ~/code/setup/.zsh_plugins.sh
 
 # ---------------------------------------- #
 #  Custom
 # ---------------------------------------- #
 
-export HOMEBREW_NO_AUTO_UPDATE="1" 
-export DEFAULT_BROWSER="Safari" 
-export EDITOR="vim" 
-export LANG="en_US.UTF-8" 
+export HOMEBREW_NO_AUTO_UPDATE="1"
+export DEFAULT_BROWSER="Safari"
+export EDITOR="vim"
+export LANG="en_US.UTF-8"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -40,7 +31,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
 
 # Online cheatsheet
 function cheat(){
-	curl "cheat.sh/$1"
+        curl "cheat.sh/$1"
 }
 
 # Jump to project bookmark
@@ -52,13 +43,13 @@ jump() {
 }
 zle -N jump
 
-# Open repository in chrome
+# Open repository in default browser
 func repo(){
-	if [ -d .git ]; then
-  		open -a $DEFAULT_BROWSER $(git remote get-url upstream | sed 's|.git$||g');
-  	else
-  		echo "Not a git repository!";
-  	fi;
+        if [ -d .git ]; then
+                open -a $DEFAULT_BROWSER $(git remote get-url upstream | sed 's|.git$||g');
+        else
+                echo "Not a git repository!";
+        fi;
 }
 
 # Saving initial prompt before timestamp changes
@@ -83,9 +74,6 @@ alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 alias pq='parquet-tools'
 alias src="source /Users/$USER/.zshrc"
-alias what-role='echo $ASSUMED_ROLE'
-alias ecr-login='eval $(aws ecr get-login --region us-east-1 --no-include-email)'
-
 
 # ---------------------------------------- #
 #  Bindkeys
@@ -116,22 +104,8 @@ goenv() {
 }
 
 # ---------------------------------------- #
-#  Kube PS1 
+#  SDKMAN
 # ---------------------------------------- #
-source "/Users/$USER/Homebrew/opt/kube-ps1/share/kube-ps1.sh"
-function get_cluster_short() {
-  echo "$1" | cut -d / -f2
-}
-export KUBE_PS1_SYMBOL_ENABLE=false
-export KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
-export KUBE_PS1_DIVIDER=" : "
-export KUBE_PS1_PREFIX="("
-export KUBE_PS1_SUFFIX=") "
-PROMPT='$(kube_ps1)'$PROMPT
-
-
-# ---------------------------------------- #
-#  NodeJS and related tools
-# ---------------------------------------- #
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/manojkarthick/.sdkman"
+[[ -s "/Users/manojkarthick/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/manojkarthick/.sdkman/bin/sdkman-init.sh"
