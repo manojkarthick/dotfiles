@@ -15,6 +15,7 @@ applications=(
   intel-power-gadget
   visual-studio-code
   spotify
+  caffeine
 )
 
 manual=(
