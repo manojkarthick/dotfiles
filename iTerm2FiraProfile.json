@@ -294,6 +294,7 @@
     }
   },
   "Window Type" : 0,
+  "Cursor Type" : 0,
   "Background Image Location" : "",
   "Blur" : false,
   "Badge Color" : {
