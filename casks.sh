@@ -16,6 +16,7 @@ applications=(
   visual-studio-code
   spotify
   caffeine
+  google-backup-and-sync
 )
 
 manual=(
