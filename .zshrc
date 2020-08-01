@@ -1,7 +1,7 @@
 # ---------------------------------------- #
 # Exports and Paths
 # ---------------------------------------- #
-export PATH="$HOME/bin:$HOME/Homebrew/bin:${PATH}"
+export PATH="$HOME/bin:$HOME/Homebrew/bin:${PATH}:${HOME}/.krew/bin"
 
 # ---------------------------------------- #
 #  Antibody
@@ -46,7 +46,7 @@ zle -N jump
 # Open repository in default browser
 func repo(){
         if [ -d .git ]; then
-                open -a $DEFAULT_BROWSER $(git remote get-url upstream | sed 's|.git$||g');
+				open -a $DEFAULT_BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g');
         else
                 echo "Not a git repository!";
         fi;
@@ -66,6 +66,17 @@ function timeon() {
 
 
 # ---------------------------------------- #
+#  Cloud tools
+# ---------------------------------------- #
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+
+# ---------------------------------------- #
 #  Aliases
 # ---------------------------------------- #
 
@@ -74,6 +85,7 @@ alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 alias pq='parquet-tools'
 alias src="source /Users/$USER/.zshrc"
+alias browse="open -a ${DEFAULT_BROWSER}"
 
 # ---------------------------------------- #
 #  Bindkeys
@@ -102,6 +114,24 @@ goenv() {
 	goenv "$@"
 }
 
+# ---------------------------------------- #
+#  Kubernetes
+# ---------------------------------------- #
+# Kubectl Autocomplete
+source <(kubectl completion zsh)
+
+# Kube-PS1 prompt customization
+source "/Users/manojkarthick/Homebrew/opt/kube-ps1/share/kube-ps1.sh"
+function get_cluster_short() {
+  echo "$1" | cut -d / -f2
+}
+export KUBE_PS1_SYMBOL_ENABLE=false
+export KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
+export KUBE_PS1_DIVIDER=" : "
+export KUBE_PS1_PREFIX="("
+export KUBE_PS1_SUFFIX=") "
+PROMPT='$(kube_ps1)'$PROMPT
+
 
 # ---------------------------------------- #
 #  SDKMAN
@@ -109,3 +139,4 @@ goenv() {
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/manojkarthick/.sdkman"
 [[ -s "/Users/manojkarthick/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/manojkarthick/.sdkman/bin/sdkman-init.sh"
+
