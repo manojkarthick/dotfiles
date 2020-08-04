@@ -32,3 +32,5 @@ wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk
 tar xvf google-cloud-sdk-303.0.0-darwin-x86_64.tar.gz
 mv google-cloud-sdk ~/bin/
 
+# Install rust
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
