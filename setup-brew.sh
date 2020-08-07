@@ -36,3 +36,5 @@ brew install kube-ps1
 # Send macOS notifications from the terminal, https://github.com/julienXX/terminal-notifier
 brew install terminal-notifier
 
+# Install direnv
+brew install direnv
