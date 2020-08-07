@@ -19,6 +19,7 @@ applications=(
   google-backup-and-sync
 )
 
+# shellcheck disable=SC2034
 manual=(
   logitech-options
 )

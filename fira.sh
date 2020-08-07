@@ -1,10 +1,10 @@
-#/bin/bash
+#!/bin/bash
 
-echo "Downloading firacode fonts from master on github" 
+echo "Downloading Fira code fonts from master on github"
 
 set -x
 
-mkdir -pv FiraCode && cd FiraCode
+mkdir -pv FiraCode && cd FiraCode || return
 wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Bold.ttf
 wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Light.ttf
 wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Medium.ttf

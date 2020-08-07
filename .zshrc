@@ -1,12 +1,24 @@
 # ---------------------------------------- #
 # Exports and Paths
 # ---------------------------------------- #
-export PATH="$HOME/bin:$HOME/Homebrew/bin:${PATH}:${HOME}/.krew/bin"
+# Use Array style path initiation for cleaner look
+# Inspired by: https://github.com/BrodieRobertson/dotfiles/blob/master/.zshenv
+typeset -U PATH path
+path=(
+    "$HOME/bin"
+    "$HOME/Homebrew/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/Homebrew/opt/gnu-getopt/bin"
+    "$HOME/.krew/bin"
+    "$path[@]"
+)
+export PATH
 
 # ---------------------------------------- #
 #  Antibody
 # ---------------------------------------- #
-
+# Automatically load compinit only once per day
+# Inspired by: https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
   compinit
@@ -24,6 +36,7 @@ export HOMEBREW_NO_AUTO_UPDATE="1"
 export DEFAULT_BROWSER="Safari"
 export EDITOR="vim"
 export LANG="en_US.UTF-8"
+export WHICHMAC="Personal"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -31,7 +44,7 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
 
 # Online cheatsheet
 function cheat(){
-        curl "cheat.sh/$1"
+  curl "cheat.sh/$1"
 }
 
 # Jump to project bookmark
@@ -45,11 +58,11 @@ zle -N jump
 
 # Open repository in default browser
 func repo(){
-        if [ -d .git ]; then
-				open -a $DEFAULT_BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g');
-        else
-                echo "Not a git repository!";
-        fi;
+  if [ -d .git ]; then
+    open -a $DEFAULT_BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g');
+  else
+    echo "Not a git repository!";
+  fi;
 }
 
 # Saving initial prompt before timestamp changes
@@ -69,10 +82,14 @@ function timeon() {
 #  Cloud tools
 # ---------------------------------------- #
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc' ];
+then . '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc';
+fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc' ];
+then . '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc';
+fi
 
 
 
@@ -80,12 +97,13 @@ if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc' ]; then .
 #  Aliases
 # ---------------------------------------- #
 
-alias bmadd='echo $(pwd) >> /Users/$USER/code/.bookmarks'
+alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
 alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 alias pq='parquet-tools'
 alias src="source /Users/$USER/.zshrc"
 alias browse="open -a ${DEFAULT_BROWSER}"
+alias yt="youtube-dl"
 
 # ---------------------------------------- #
 #  Bindkeys
@@ -103,15 +121,14 @@ bindkey "^j" jump
 # NOTE: pyenv and goenv are lazy-loaded in the below commands
 # The reason the behavior has been changed is to reduce shell startup latency
 # Inspired by: https://carlosbecker.com/posts/speeding-up-zsh/
-
 pyenv() {
   eval "$(command pyenv init - zsh --no-rehash)"
   pyenv "$@"
 }
 
 goenv() {
-	eval "$(command goenv init - zsh)"
-	goenv "$@"
+  eval "$(command goenv init - zsh)"
+  goenv "$@"
 }
 
 # ---------------------------------------- #
@@ -121,7 +138,7 @@ goenv() {
 source <(kubectl completion zsh)
 
 # Kube-PS1 prompt customization
-source "/Users/manojkarthick/Homebrew/opt/kube-ps1/share/kube-ps1.sh"
+source "$HOME/Homebrew/opt/kube-ps1/share/kube-ps1.sh"
 function get_cluster_short() {
   echo "$1" | cut -d / -f2
 }
@@ -136,7 +153,10 @@ PROMPT='$(kube_ps1)'$PROMPT
 # ---------------------------------------- #
 #  SDKMAN
 # ---------------------------------------- #
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/manojkarthick/.sdkman"
-[[ -s "/Users/manojkarthick/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/manojkarthick/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# ---------------------------------------- #
+#  direnv
+# ---------------------------------------- #
+eval "$(direnv hook zsh)"
