@@ -1,4 +1,4 @@
 .DS_Store
-FiraCode
-.zsh_plugins.sh
+install/fonts/FiraCode
+zsh/antibody/.zsh_plugins.sh
 .idea

@@ -26,7 +26,7 @@ else
   compinit -C
 fi
 
-source ~/code/setup/.zsh_plugins.sh
+source "$HOME/code/setup/zsh/antibody/.zsh_plugins.sh"
 
 # ---------------------------------------- #
 #  Custom
@@ -39,7 +39,7 @@ export LANG="en_US.UTF-8"
 export WHICHMAC="Personal"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
 
 # Online cheatsheet
