@@ -33,8 +33,9 @@ source "$HOME/code/setup/zsh/antibody/.zsh_plugins.sh"
 # ---------------------------------------- #
 
 export HOMEBREW_NO_AUTO_UPDATE="1"
-export DEFAULT_BROWSER="Safari"
+export BROWSER="Safari"
 export EDITOR="vim"
+export VISUAL="vim"
 export LANG="en_US.UTF-8"
 export WHICHMAC="Personal"
 
