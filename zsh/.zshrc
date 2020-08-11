@@ -26,7 +26,7 @@ else
 		compinit -C
 fi
 
-source "$HOME/code/setup/zsh/antibody/.zsh_plugins.sh"
+source "$HOME/code/dotfiles/zsh/antibody/.zsh_plugins.sh"
 
 # ---------------------------------------- #
 #  Custom
