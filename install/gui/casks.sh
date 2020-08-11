@@ -31,6 +31,7 @@ installation() {
  do
     set -x
     brew cask install $i
+	set +x
  done
 
 }
@@ -40,6 +41,7 @@ uninstallation() {
  do
     set -x
     brew cask uninstall $i
+	set +x
  done
 
 }
