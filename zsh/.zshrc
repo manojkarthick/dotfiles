@@ -57,6 +57,7 @@ jump() {
 		zle -N jump
 
 # Open repository in default browser
+# NOTE: At the moment only works for ssh-cloned git repositories
 func repo(){
 if [ -d .git ]; then
 		open -a $DEFAULT_BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g; s|^|https://|g')
