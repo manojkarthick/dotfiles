@@ -5,12 +5,12 @@
 # Inspired by: https://github.com/BrodieRobertson/dotfiles/blob/master/.zshenv
 typeset -U PATH path
 path=(
-    "$HOME/bin"
-    "$HOME/Homebrew/bin"
-    "$HOME/.cargo/bin"
-    "$HOME/Homebrew/opt/gnu-getopt/bin"
-    "$HOME/.krew/bin"
-    "$path[@]"
+		"$HOME/bin"
+		"$HOME/Homebrew/bin"
+		"$HOME/.cargo/bin"
+		"$HOME/Homebrew/opt/gnu-getopt/bin"
+		"$HOME/.krew/bin"
+		"$path[@]"
 )
 export PATH
 
@@ -21,9 +21,9 @@ export PATH
 # Inspired by: https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
-  compinit
+		compinit
 else
-  compinit -C
+		compinit -C
 fi
 
 source "$HOME/code/setup/zsh/antibody/.zsh_plugins.sh"
@@ -44,37 +44,37 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
 
 # Online cheatsheet
 function cheat(){
-  curl "cheat.sh/$1"
+		curl "cheat.sh/$1"
 }
 
 # Jump to project bookmark
 jump() {
-  local dir
-  dir=$(cat ~/code/.bookmarks| fzf ) &&
-  cd "$dir"
-  zle reset-prompt
-}
-zle -N jump
+		local dir
+		dir=$(cat ~/code/.bookmarks| fzf ) &&
+				cd "$dir"
+						zle reset-prompt
+				}
+		zle -N jump
 
 # Open repository in default browser
 func repo(){
-  if [ -d .git ]; then
-    open -a $DEFAULT_BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g');
-  else
-    echo "Not a git repository!";
-  fi;
+if [ -d .git ]; then
+		open -a $DEFAULT_BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g; s|^|https://|g')
+else
+		echo "Not a git repository!";
+fi;
 }
 
 # Saving initial prompt before timestamp changes
 INITIAL_PROMPT=$PROMPT
 # Don't show timestamp anymore
 function timeoff() {
-  # Prompt from theme gianu
-  PROMPT=$INITIAL_PROMPT
+		# Prompt from theme gianu
+		PROMPT=$INITIAL_PROMPT
 }
 # Show timestamp in prompt header
 function timeon() {
-  PROMPT='[%*] '$PROMPT
+		PROMPT='[%*] '$PROMPT
 }
 
 # Default options for less
@@ -133,13 +133,13 @@ bindkey "^j" jump
 # The reason the behavior has been changed is to reduce shell startup latency
 # Inspired by: https://carlosbecker.com/posts/speeding-up-zsh/
 pyenv() {
-  eval "$(command pyenv init - zsh --no-rehash)"
-  pyenv "$@"
+		eval "$(command pyenv init - zsh --no-rehash)"
+		pyenv "$@"
 }
 
 goenv() {
-  eval "$(command goenv init - zsh)"
-  goenv "$@"
+		eval "$(command goenv init - zsh)"
+		goenv "$@"
 }
 
 # ---------------------------------------- #
@@ -151,7 +151,7 @@ source <(kubectl completion zsh)
 # Kube-PS1 prompt customization
 source "$HOME/Homebrew/opt/kube-ps1/share/kube-ps1.sh"
 function get_cluster_short() {
-  echo "$1" | cut -d / -f2
+		echo "$1" | cut -d / -f2
 }
 export KUBE_PS1_SYMBOL_ENABLE=false
 export KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
