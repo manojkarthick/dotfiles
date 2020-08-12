@@ -95,13 +95,13 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 #  Cloud tools
 # ---------------------------------------- #
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc' ];
-then . '/Users/manojkarthick/bin/google-cloud-sdk/path.zsh.inc';
+if [ -f "$HOME/bin/google-cloud-sdk/path.zsh.inc" ];
+then . "$HOME/bin/google-cloud-sdk/path.zsh.inc";
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc' ];
-then . '/Users/manojkarthick/bin/google-cloud-sdk/completion.zsh.inc';
+if [ -f "$HOME/bin/google-cloud-sdk/completion.zsh.inc" ];
+then . "$HOME/bin/google-cloud-sdk/completion.zsh.inc";
 fi
 
 
@@ -114,7 +114,7 @@ alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
 alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 alias pq='parquet-tools'
-alias src="source /Users/$USER/.zshrc"
+alias src="source $HOME/.zshrc"
 alias browse="open -a ${DEFAULT_BROWSER}"
 alias yt="youtube-dl"
 alias nb="newsboat"
