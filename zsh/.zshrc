@@ -117,6 +117,7 @@ alias pq='parquet-tools'
 alias src="source /Users/$USER/.zshrc"
 alias browse="open -a ${DEFAULT_BROWSER}"
 alias yt="youtube-dl"
+alias nb="newsboat"
 
 # ---------------------------------------- #
 #  Bindkeys
