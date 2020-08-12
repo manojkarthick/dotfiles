@@ -118,6 +118,7 @@ alias src="source /Users/$USER/.zshrc"
 alias browse="open -a ${DEFAULT_BROWSER}"
 alias yt="youtube-dl"
 alias nb="newsboat"
+alias findr="open -a Finder.app"
 
 # ---------------------------------------- #
 #  Bindkeys
