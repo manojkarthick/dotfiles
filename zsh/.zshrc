@@ -10,6 +10,7 @@ path=(
 		"$HOME/.cargo/bin"
 		"$HOME/Homebrew/opt/gnu-getopt/bin"
 		"$HOME/.krew/bin"
+		"$HOME/Library/Python/3.8/bin"
 		"$path[@]"
 )
 export PATH
@@ -91,6 +92,8 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
+export NVM_DIR="$HOME/.nvm"
+
 # ---------------------------------------- #
 #  Cloud tools
 # ---------------------------------------- #
@@ -144,6 +147,10 @@ pyenv() {
 goenv() {
 		eval "$(command goenv init - zsh)"
 		goenv "$@"
+}
+
+nvm_lazy() {
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 }
 
 # ---------------------------------------- #
