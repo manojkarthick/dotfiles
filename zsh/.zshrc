@@ -11,6 +11,7 @@ path=(
 		"$HOME/Homebrew/opt/gnu-getopt/bin"
 		"$HOME/.krew/bin"
 		"$HOME/Library/Python/3.8/bin"
+		"$HOME/.tfenv/bin"
 		"$path[@]"
 )
 export PATH
@@ -122,6 +123,7 @@ alias browse="open -a ${DEFAULT_BROWSER}"
 alias yt="youtube-dl"
 alias nb="newsboat"
 alias findr="open -a Finder.app"
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 # ---------------------------------------- #
 #  Bindkeys
