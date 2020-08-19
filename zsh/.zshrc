@@ -7,7 +7,6 @@ typeset -U PATH path
 path=(
 		"$HOME/bin"
 		"$HOME/Homebrew/bin"
-		"$HOME/.cargo/bin"
 		"$HOME/Homebrew/opt/gnu-getopt/bin"
 		"$HOME/.krew/bin"
 		"$HOME/Library/Python/3.8/bin"
