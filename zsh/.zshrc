@@ -123,6 +123,7 @@ alias yt="youtube-dl"
 alias nb="newsboat"
 alias findr="open -a Finder.app"
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+alias piholeadmin="open -a Safari.app http://pi.hole/admin/"
 
 # ---------------------------------------- #
 #  Bindkeys
