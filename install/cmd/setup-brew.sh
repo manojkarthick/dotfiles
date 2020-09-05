@@ -38,3 +38,7 @@ brew install terminal-notifier
 
 # Install direnv
 brew install direnv
+
+# Install Restic
+brew install restic
+

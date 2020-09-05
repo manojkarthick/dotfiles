@@ -94,6 +94,8 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 export NVM_DIR="$HOME/.nvm"
 
+# Restic configuration
+export RESTIC_PASSWORD_FILE="$HOME/.restic/password"
 # ---------------------------------------- #
 #  Cloud tools
 # ---------------------------------------- #
