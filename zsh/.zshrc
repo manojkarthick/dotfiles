@@ -34,7 +34,7 @@ source "$HOME/code/dotfiles/zsh/antibody/.zsh_plugins.sh"
 # ---------------------------------------- #
 
 export HOMEBREW_NO_AUTO_UPDATE="1"
-export BROWSER="Safari"
+export BROWSER="open -a Safari.app"
 export EDITOR="vim"
 export VISUAL="vim"
 export LANG="en_US.UTF-8"
