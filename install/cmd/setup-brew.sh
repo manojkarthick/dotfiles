@@ -42,3 +42,6 @@ brew install direnv
 # Install Restic
 brew install restic
 
+# Install github CLI
+brew install gh
+
