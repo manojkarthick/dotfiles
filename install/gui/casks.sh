@@ -17,6 +17,7 @@ applications=(
   spotify
   caffeine
   google-backup-and-sync
+  vagrant
 )
 
 # shellcheck disable=SC2034
