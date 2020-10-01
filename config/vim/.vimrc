@@ -41,3 +41,27 @@ autocmd VimLeave * let &t_me="\<Esc>]50;CursorShape=2\x7"
 " Change color of line numbers to grey
 highlight LineNr ctermfg=grey
 
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'LnL7/vim-nix'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+
+call plug#end()
+
+" Toggle NERDTree
+" t: Open the selected file in a new tab
+" i: Open the selected file in a horizontal split window
+" s: Open the selected file in a vertical split window
+" I: Toggle hidden files
+" m: Show the NERD Tree menu
+" R: Refresh the tree, useful if files change outside of Vim
+" ?: Toggle NERD Tree's quick help
+nmap <C-n> :NERDTreeToggle<CR>
+
+" Commentary shortcuts
+" gc - toggle comments
+
