@@ -41,7 +41,6 @@ autocmd VimLeave * let &t_me="\<Esc>]50;CursorShape=2\x7"
 " Change color of line numbers to grey
 highlight LineNr ctermfg=grey
 
-
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
@@ -49,6 +48,7 @@ Plug 'LnL7/vim-nix'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -64,4 +64,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 " Commentary shortcuts
 " gc - toggle comments
+autocmd FileType tf setlocal commentstring=#\ %s
+
+" Toggle GitGutterOnOff
+nmap <C-g> :GitGutterToggle<CR>
 
