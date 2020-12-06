@@ -1,4 +1,15 @@
 # ---------------------------------------- #
+#  Nix package manager
+# ---------------------------------------- #
+if [ -e /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+
+
+# ---------------------------------------- #
+
+
+# ---------------------------------------- #
 # Exports and Paths
 # ---------------------------------------- #
 # Use Array style path initiation for cleaner look
@@ -78,6 +89,11 @@ function timeoff() {
 # Show timestamp in prompt header
 function timeon() {
 		PROMPT='[%*] '$PROMPT
+}
+
+# Start SSH Agent
+function start_ssh_agent() {
+		eval "$(ssh-agent)"
 }
 
 # Default options for less
@@ -186,3 +202,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #  direnv
 # ---------------------------------------- #
 eval "$(direnv hook zsh)"
+
+# ---------------------------------------- #
+#  direnv
+# ---------------------------------------- #
+eval "$(starship init zsh)"
+
