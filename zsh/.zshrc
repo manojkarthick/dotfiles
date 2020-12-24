@@ -5,10 +5,6 @@ if [ -e /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
-
-# ---------------------------------------- #
-
-
 # ---------------------------------------- #
 # Exports and Paths
 # ---------------------------------------- #
@@ -39,6 +35,19 @@ else
 fi
 
 source "$HOME/code/dotfiles/zsh/antibody/.zsh_plugins.sh"
+
+# ---------------------------------------- #
+#  starship
+# ---------------------------------------- #
+eval "$(starship init zsh)"
+function starship-disable(){
+	starship config "$1.disabled" true
+}
+
+function starship-enable(){
+	starship config "$1.disabled" false
+}
+
 
 # ---------------------------------------- #
 #  Custom
@@ -142,6 +151,9 @@ alias nb="newsboat"
 alias findr="open -a Finder.app"
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 alias piholeadmin="open -a Safari.app http://pi.hole/admin/"
+alias hme="home-manager edit"
+alias hms="home-manager switch"
+alias hmp="home-manager packages"
 
 # ---------------------------------------- #
 #  Bindkeys
@@ -204,7 +216,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 eval "$(direnv hook zsh)"
 
 # ---------------------------------------- #
-#  direnv
+#  starship
 # ---------------------------------------- #
 eval "$(starship init zsh)"
 
