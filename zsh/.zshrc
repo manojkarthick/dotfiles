@@ -54,7 +54,7 @@ function starship-enable(){
 # ---------------------------------------- #
 
 export HOMEBREW_NO_AUTO_UPDATE="1"
-export BROWSER="open -a Safari.app"
+export BROWSER="open -a Firefox.app"
 export EDITOR="vim"
 export VISUAL="vim"
 export LANG="en_US.UTF-8"
@@ -73,10 +73,11 @@ function cheat(){
 jump() {
 		local dir
 		dir=$(cat ~/code/.bookmarks| fzf ) &&
-				cd "$dir"
-						zle reset-prompt
-				}
-		zle -N jump
+		cd "$dir"
+		starship_precmd
+		zle reset-prompt
+}
+zle -N jump
 
 # Open repository in default browser
 # NOTE: At the moment only works for ssh-cloned git repositories
@@ -154,6 +155,7 @@ alias piholeadmin="open -a Safari.app http://pi.hole/admin/"
 alias hme="home-manager edit"
 alias hms="home-manager switch"
 alias hmp="home-manager packages"
+alias vgs="vagrant global-status"
 
 # ---------------------------------------- #
 #  Bindkeys
@@ -162,6 +164,10 @@ alias hmp="home-manager packages"
 bindkey -e
 bindkey '\e\e[C' forward-word
 bindkey '\e\e[D' backward-word
+# Cmd-Left
+bindkey "^[[H" beginning-of-line
+# Cmd-Right
+bindkey "^[[F" end-of-line
 bindkey "^j" jump
 
 # ---------------------------------------- #
@@ -214,9 +220,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 #  direnv
 # ---------------------------------------- #
 eval "$(direnv hook zsh)"
-
-# ---------------------------------------- #
-#  starship
-# ---------------------------------------- #
-eval "$(starship init zsh)"
 
