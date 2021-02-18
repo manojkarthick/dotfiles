@@ -19,3 +19,18 @@
 	sl = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
 	discard = !git stash save --keep-index --include-untracked && git stash drop
 	l = log --oneline
+	blast = !git add -A && git commit --amend --no-edit && git push -f origin master
+	branchrename = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
+	dt = "!git tag --delete $2"
+	drt = "!git push --delete origin $2"
+
+[init]
+	defaultBranch = master
+[core]
+	excludesfile = /Users/manojkarthick/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
