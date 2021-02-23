@@ -27,7 +27,7 @@
 [init]
 	defaultBranch = master
 [core]
-	excludesfile = /Users/manojkarthick/.gitignore_global
+	excludesFile = ~/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
