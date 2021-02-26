@@ -1,0 +1,75 @@
+Contenders:
+* https://github.com/anishathalye/dotbot [^^^]
+* https://github.com/technicalpickles/homesick
+* https://github.com/TheLocehiliosan/yadm
+
+Symlinks:
+
+config/bookmarks/.bookmarks -> ~/code/.bookmarks
+config/git/.gitconfig -> ~/.gitignore
+config/git/.gitignore_global -> ~/.gitignore_global
+config/newsboat/config -> ~/.newsboat/config
+config/newsboat/urls -> ~/.newsboat/urls
+config/timezones/.timezones -> ~/code/.timezones
+config/vim/.vimrc -> ~/.vimrc
+scripts/tz -> ~/bin/world-clock
+zsh/.zshrc -> ~/.zshrc
+zsh/antibody/.zsh_plugins.sh -> ~/.antibody/.zsh_plugins.sh
+zsh/antibody/.zsh_plugins.txt -> ~/.antibody/.zsh_plugins.txt
+zsh/antibody/antibody-bundle -> ~/bin/antibody-bundle
+
+Folders to create:
+
+~/code
+~/bin
+~/.newsboat
+~/.antibody
+
+
+Scripts to run:
+
+defaults/values.sh
+install/setup-ancillary.sh
+install/setup-brew.sh
+install/setup-vimplug.sh
+install/fonts/fira.sh
+install/gui/casks.sh
+
+Files to import:
+
+config/spectacle/Shortcuts.json
+config/iTerm2/iTerm2FiraProfile.json
+config/iTerm2/iTerm2KeyMaps.itermcolors
+config/firefox/userChrome.css
+
+
+To Do:
+home-manager
+~/bin binaries to be added to ancillary
+sync from Brewfile
+cargo
+goenv
+pyenv
+nvm
+docker-machine
+git-info
+IntelliJ Idea
+
+Firefox Addons:
+
+Must-have:
+
+Dark Reader
+Detach Tab
+Firefox Multi Account Containers
+HTTPS Everywhere
+I don't care about cookies
+Privacy Badger
+uBlock Origin
+1Password
+
+Media:
+
+Reddit Enhancement Suite
+Instagram Downloader
+SponsorBlock
