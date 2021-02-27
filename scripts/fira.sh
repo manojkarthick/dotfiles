@@ -11,3 +11,5 @@ wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/FiraCode-Medium.ttf
 wget https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-Regular.ttf
 wget https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-Retina.ttf
 wget https://github.com/tonsky/FiraCode/blob/master/distr/ttf/FiraCode-SemiBold.ttf
+
+# Then open each ttf file and install manually.
