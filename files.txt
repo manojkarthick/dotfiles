@@ -45,6 +45,11 @@ config/iTerm2/iTerm2FiraProfile.json
 config/iTerm2/iTerm2KeyMaps.itermcolors
 config/firefox/userChrome.css
 
+Manual install:
+* google-cloud-sdk
+* rustup toolchain
+* nvm
+
 
 To Do:
 home-manager

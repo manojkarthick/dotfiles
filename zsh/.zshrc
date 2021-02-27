@@ -1,7 +1,9 @@
 # ---------------------------------------- #
 #  Nix package manager
 # ---------------------------------------- #
-if [ -e /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh ]; then
+    . /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh;
+fi
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 
@@ -78,16 +80,6 @@ jump() {
 		zle reset-prompt
 }
 zle -N jump
-
-# Open repository in default browser
-# NOTE: At the moment only works for ssh-cloned git repositories
-func repo(){
-if [ -d .git ]; then
-		open -a $BROWSER $(git remote get-url origin | sed 's|.git$||g; s|^git@||g; s|:|/|g; s|^|https://|g')
-else
-		echo "Not a git repository!";
-fi;
-}
 
 # Saving initial prompt before timestamp changes
 INITIAL_PROMPT=$PROMPT
@@ -196,19 +188,6 @@ nvm_lazy() {
 # ---------------------------------------- #
 # Kubectl Autocomplete
 source <(kubectl completion zsh)
-
-# Kube-PS1 prompt customization
-source "$HOME/Homebrew/opt/kube-ps1/share/kube-ps1.sh"
-function get_cluster_short() {
-		echo "$1" | cut -d / -f2
-}
-export KUBE_PS1_SYMBOL_ENABLE=false
-export KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
-export KUBE_PS1_DIVIDER=" : "
-export KUBE_PS1_PREFIX="("
-export KUBE_PS1_SUFFIX=") "
-PROMPT='$(kube_ps1)'$PROMPT
-
 
 # ---------------------------------------- #
 #  SDKMAN
