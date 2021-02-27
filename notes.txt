@@ -1,0 +1,27 @@
+Scripts to run:
+
+scripts/macos-defaults.sh
+scripts/setup-ancillary.sh
+homebrew/install.sh
+homebrew/post-install.sh
+vim/install-vim-plug.sh
+scripts/fira.sh
+
+
+Not automated yet:
+
+* nvm
+* rustup/cargo
+* google-cloud-sdk
+* nix install
+* home-manager install
+* git-info
+* docker-machine
+* youtube-dl
+* cfssl/cfssljson
+
+To Do:
+
+~/bin binaries to be added to ancillary:
+* cobra
+* github-upload-asset

@@ -1,0 +1,16 @@
+Firefox Addons:
+
+Must-have:
+- Dark Reader
+- Detach Tab
+- Firefox Multi Account Containers
+- HTTPS Everywhere
+- I don't care about cookies
+- Privacy Badger
+- uBlock Origin
+- 1Password
+
+Media:
+- Reddit Enhancement Suite
+- Instagram Downloader
+- SponsorBlock
