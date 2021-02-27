@@ -17,6 +17,7 @@
     ~/.antibody/.zsh_plugins.sh: zsh/antibody/.zsh_plugins.sh
     ~/.antibody/.zsh_plugins.txt: zsh/antibody/.zsh_plugins.txt
     ~/bin/antibody-bundle: zsh/antibody/antibody-bundle
+    ~/.config/nixpkgs/home.nix: nix/home.nix
 
 - create:
     - ~/code
@@ -24,3 +25,4 @@
     - ~/bin
     - ~/.antibody
     - ~/.vim/plugged
+    - ~/.config
