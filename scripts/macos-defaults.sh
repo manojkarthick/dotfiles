@@ -1,6 +1,6 @@
-#!/bin/zsh
+#!/bin/bash
 
-# Obtained from https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# Inspired by https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
 # Dock
 defaults write com.apple.dock orientation -string bottom

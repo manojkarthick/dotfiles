@@ -34,6 +34,9 @@ install/setup-brew.sh
 install/setup-vimplug.sh
 install/fonts/fira.sh
 install/gui/casks.sh
+script for nvm ??
+script for rustup/cargo ??
+script for
 
 Files to import:
 

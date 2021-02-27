@@ -6,12 +6,12 @@
 
 - link:
     ~/code/.bookmarks: config/bookmarks/.bookmarks
-    ~/.gitconfig: config/git/.gitconfig
-    ~/.gitignore_global: config/git/.gitignore_global
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore_global: git/.gitignore_global
     ~/.newsboat/config: config/newsboat/config
     ~/.newsboat/urls: config/newsboat/urls
     ~/code/.timezones: config/timezones/.timezones
-    ~/.vimrc: config/vim/.vimrc
+    ~/.vimrc: vim/.vimrc
     ~/bin/world-clock: scripts/tz
     ~/.zshrc: zsh/.zshrc
     ~/.antibody/.zsh_plugins.sh: zsh/antibody/.zsh_plugins.sh
