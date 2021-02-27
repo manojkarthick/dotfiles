@@ -1,0 +1,20 @@
+[kubernetes]
+format = '[⛵ $context \($namespace\)](dimmed green) '
+disabled = true
+enabled = false
+
+[kubernetes.context_aliases]
+gke_kubernetes-the-hard-way-284919_us-west1-b_burrito = 'burrito'
+k3d-taco = 'taco'
+
+[gcloud]
+disabled = true
+
+[kuberentes]
+disabled = false
+
+[git_status]
+disabled = false
+
+[battery]
+disabled = true

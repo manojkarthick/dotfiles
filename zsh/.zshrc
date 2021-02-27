@@ -39,6 +39,11 @@ fi
 source "$HOME/code/dotfiles/zsh/antibody/.zsh_plugins.sh"
 
 # ---------------------------------------- #
+#  cargo
+# ---------------------------------------- #
+source "$HOME/.cargo/env"
+
+# ---------------------------------------- #
 #  starship
 # ---------------------------------------- #
 eval "$(starship init zsh)"
