@@ -115,10 +115,10 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-export NVM_DIR="$HOME/.nvm"
-
 # Restic configuration
 export RESTIC_PASSWORD_FILE="$HOME/.restic/password"
+
+
 # ---------------------------------------- #
 #  Cloud tools
 # ---------------------------------------- #
@@ -174,16 +174,21 @@ bindkey "^j" jump
 # NOTE: pyenv and goenv are lazy-loaded in the below commands
 # The reason the behavior has been changed is to reduce shell startup latency
 # Inspired by: https://carlosbecker.com/posts/speeding-up-zsh/
+
+# Python
 pyenv() {
 		eval "$(command pyenv init - zsh --no-rehash)"
 		pyenv "$@"
 }
 
+# Golang
 goenv() {
 		eval "$(command goenv init - zsh)"
 		goenv "$@"
 }
 
+# Node.js
+export NVM_DIR="$HOME/.nvm"
 nvm_lazy() {
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 }
