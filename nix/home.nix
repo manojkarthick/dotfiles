@@ -42,9 +42,9 @@
     pkgs.terminal-notifier
     pkgs.vagrant
     pkgs.newsboat
+    pkgs.rclone
 
     # Own packages
     pkgs.expenses
-    pkgs.reddsaver
   ];
 }
