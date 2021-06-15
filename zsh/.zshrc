@@ -69,7 +69,13 @@ export WHICHMAC="Personal"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
+export FZF_DEFAULT_OPTS='
+  --height 40%
+  --layout=reverse
+  --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9
+  --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9
+  --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6
+  --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 
 # Online cheatsheet
 function cheat(){
@@ -85,6 +91,32 @@ jump() {
 		zle reset-prompt
 }
 zle -N jump
+
+# Staging files for git using fzf
+# Inspired by: https://bluz71.github.io/2018/11/26/fuzzy-finding-in-bash-with-fzf.html
+fzf_git_add() {
+    local selections=$(
+      git status --porcelain | \
+      fzf --ansi --multi \
+          --preview 'if (git ls-files --error-unmatch {2} &>/dev/null); then
+                         git diff --color=always {2}
+                     else
+                         bat --color=always --line-range :500 {2}
+                     fi'
+      )
+    if [[ -n $selections ]]; then
+        git add --verbose $(echo "$selections" | cut -c 4- | tr '\n' ' ')
+    fi
+}
+
+alias gadd='fzf_git_add'
+
+# Open repository in default browser
+# NOTE: At the moment only works for ssh-cloned git repositories
+func repo(){
+	gh repo view --web
+}
+
 
 # Saving initial prompt before timestamp changes
 INITIAL_PROMPT=$PROMPT
@@ -153,6 +185,7 @@ alias hme="home-manager edit"
 alias hms="home-manager switch"
 alias hmp="home-manager packages"
 alias vgs="vagrant global-status"
+[ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 # ---------------------------------------- #
 #  Bindkeys
@@ -182,6 +215,7 @@ pyenv() {
 }
 
 # Golang
+export GOENV_ROOT="$HOME/.goenv"
 goenv() {
 		eval "$(command goenv init - zsh)"
 		goenv "$@"
@@ -210,3 +244,17 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # ---------------------------------------- #
 eval "$(direnv hook zsh)"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('$HOME/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/miniconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<

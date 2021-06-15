@@ -23,6 +23,7 @@
 	branchrename = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
 	dt = "!git tag --delete $2"
 	drt = "!git push --delete origin $2"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [init]
 	defaultBranch = master

@@ -1,0 +1,10 @@
+blocks:
+  - permission
+  - size
+  - date
+  - name
+
+size: default
+
+sorting:
+  dir-grouping: last
