@@ -61,6 +61,7 @@ function starship-enable(){
 # ---------------------------------------- #
 
 export HOMEBREW_NO_AUTO_UPDATE="1"
+export HOMEBREW_NO_ANALYTICS=1
 export BROWSER="open -a Firefox.app"
 export EDITOR="vim"
 export VISUAL="vim"
