@@ -14,8 +14,10 @@ Others:
 Homebrew:
 
 * 1Password 7: `brew install --cask 1password`
+* AWS Vault: `brew install --cask aws-vault`
 * Docker: `brew install --cask docker`
 * Google Chrome: `brew install --cask google-chrome`
+* IntelliJ IDEA: `brew install --cask intellij-idea`
 * iTerm2: `brew install --cask iterm2`
 * ItsyCal: `brew install --cask itsycal`
 * Jetbrains Toolbox: `brew install --cask jetbrains-toolbox`
