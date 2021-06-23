@@ -1,31 +1,31 @@
 [pull]
-	rebase = true
+		rebase = true
 [user]
-	name = Manoj Karthick
-	email = manojkarthick@ymail.com
+		name = Manoj Karthick
+		email = smanojkarthick@gmail.com
 [alias]
-	unstage = reset HEAD --
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	ui = pull upstream integration 
-	um = pull upstream master
-	undo = reset --soft HEAD^
-	merged = branch --merged
-	cm = commit -m
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	dd = diff --check --dirstat --find-copies --find-renames --histogram --color
-	sl = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
-	discard = !git stash save --keep-index --include-untracked && git stash drop
-	l = log --oneline
-	blast = !git add -A && git commit --amend --no-edit && git push -f origin master
-	branchrename = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
-	dt = "!git tag --delete $2"
-	drt = "!git push --delete origin $2"
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
+		unstage = reset HEAD --
+		co = checkout
+		br = branch
+		ci = commit
+		st = status
+		ui = pull upstream integration 
+		um = pull upstream master
+		undo = reset --soft HEAD^
+		merged = branch --merged
+		cm = commit -m
+		ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+		dd = diff --check --dirstat --find-copies --find-renames --histogram --color
+		sl = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
+		discard = !git stash save --keep-index --include-untracked && git stash drop
+		l = log --oneline
+		blast = !git add -A && git commit --amend --no-edit && git push -f origin master
+		branchrename = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
+		dt = "!git tag --delete $2"
+		drt = "!git push --delete origin $2"
+		dc = "diff --cached"
+		lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [init]
-	defaultBranch = master
+		defaultBranch = master
 [core]
-	excludesFile = ~/.gitignore_global
+		excludesFile = ~/.gitignore_global
