@@ -2,7 +2,7 @@
 #  Nix package manager
 # ---------------------------------------- #
 if [ -e /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh ]; then
-    . /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh;
+		. /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh;
 fi
 
 source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
@@ -48,11 +48,11 @@ source "$HOME/.cargo/env"
 # ---------------------------------------- #
 eval "$(starship init zsh)"
 function starship-disable(){
-	starship config "$1.disabled" true
+starship config "$1.disabled" true
 }
 
 function starship-enable(){
-	starship config "$1.disabled" false
+starship config "$1.disabled" false
 }
 
 
@@ -87,11 +87,11 @@ function cheat(){
 jump() {
 		local dir
 		dir=$(cat ~/code/.bookmarks| fzf ) &&
-		cd "$dir"
-		starship_precmd
-		zle reset-prompt
-}
-zle -N jump
+				cd "$dir"
+						starship_precmd
+						zle reset-prompt
+				}
+		zle -N jump
 
 # Staging files for git using fzf
 # Inspired by: https://bluz71.github.io/2018/11/26/fuzzy-finding-in-bash-with-fzf.html
