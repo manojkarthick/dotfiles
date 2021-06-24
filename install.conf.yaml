@@ -19,6 +19,7 @@
     ~/bin/antibody-bundle: zsh/antibody/antibody-bundle
     ~/.config/nixpkgs/home.nix: nix/home.nix
     ~/.config/starship.toml: config/starship/starship.toml
+    ~/.wgetrc: config/wget/.wgetrc
 
 - create:
     - ~/code
