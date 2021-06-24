@@ -20,6 +20,7 @@
     ~/.config/nixpkgs/home.nix: nix/home.nix
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.wgetrc: config/wget/.wgetrc
+    ~/.config/delta/themes.gitconfig: git/themes.gitconfig
 
 - create:
     - ~/code
@@ -28,3 +29,4 @@
     - ~/.antibody
     - ~/.vim/plugged
     - ~/.config
+    - ~/.config/delta
