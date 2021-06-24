@@ -15,6 +15,8 @@ source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 typeset -U PATH path
 path=(
 		"$HOME/bin"
+		"/opt/local/bin"
+		"/opt/local/sbin"
 		"$HOME/Homebrew/bin"
 		"$HOME/Homebrew/opt/gnu-getopt/bin"
 		"$HOME/.krew/bin"
@@ -61,12 +63,13 @@ starship config "$1.disabled" false
 # ---------------------------------------- #
 
 export HOMEBREW_NO_AUTO_UPDATE="1"
-export HOMEBREW_NO_ANALYTICS=1
-export BROWSER="open -a Firefox.app"
+export HOMEBREW_NO_ANALYTICS="1"
+export BROWSER="open"
 export EDITOR="vim"
 export VISUAL="vim"
 export LANG="en_US.UTF-8"
 export WHICHMAC="Personal"
+export DELTA_PAGER="less -R"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
