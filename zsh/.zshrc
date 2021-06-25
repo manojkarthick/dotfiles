@@ -189,6 +189,7 @@ alias hme="home-manager edit"
 alias hms="home-manager switch"
 alias hmp="home-manager packages"
 alias vgs="vagrant global-status"
+alias sz="stat -f%z"
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 # ---------------------------------------- #
