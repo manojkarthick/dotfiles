@@ -25,3 +25,8 @@ To Do:
 ~/bin binaries to be added to ancillary:
 * cobra
 * github-upload-asset
+
+
+
+Update sudo timeout: https://apple.stackexchange.com/questions/10139/how-do-i-increase-sudo-password-remember-timeout
+Setup idea cli: https://www.jetbrains.com/help/idea/working-with-the-ide-features-from-command-line.html#toolbox
