@@ -71,7 +71,7 @@ export WHICHMAC="Personal"
 export DELTA_PAGER="less -R"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source "$HOME/.fzf.zsh"
+[ -f /opt/local/share/fzf/shell/key-bindings.zsh ] && source "/opt/local/share/fzf/shell/key-bindings.zsh"
 export FZF_DEFAULT_OPTS='
   --height 40%
   --layout=reverse
