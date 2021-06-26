@@ -20,29 +20,10 @@
   home.stateVersion = "20.09";
 
   home.packages = [
-    pkgs.git
-    pkgs.starship
-    pkgs.kubernetes-helm
-    pkgs.kubectl
-    pkgs.tree
-    pkgs.wget
-    pkgs.python38
-    pkgs.awscli
-    pkgs.gitAndTools.gh
-    pkgs.unixtools.watch
-    pkgs.asciinema
     pkgs.netlify-cli
     pkgs.terraform-landscape
     pkgs.heroku
-    pkgs.jq
-    pkgs.xsv
-    pkgs.gnupg
-    pkgs.packer
-    pkgs.restic
-    pkgs.terminal-notifier
     pkgs.vagrant
-    pkgs.newsboat
-    pkgs.rclone
 
     # Own packages
     pkgs.expenses
