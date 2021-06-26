@@ -23,6 +23,7 @@ The following ports are currently installed:
   icu @67.1_4 (active)
   jq @1.6_4 (active)
   json-c @0.15-20200726_0 (active)
+  k3d @4.4.6_0 (active)
   kerberos5 @1.19.1_0 (active)
   kubectl-1.19 @1.19.8_0 (active)
   kubectl_select @0.0.0_0 (active)

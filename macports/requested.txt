@@ -9,6 +9,7 @@ The following ports are currently installed:
   gnupg2 @2.2.27_0+pinentry_mac (active)
   helm-3.5 @3.5.4_0 (active)
   jq @1.6_4 (active)
+  k3d @4.4.6_0 (active)
   kubectl-1.19 @1.19.8_0 (active)
   mpstats @0.2.0_0 (active)
   newsboat @2.23_0 (active)
