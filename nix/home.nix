@@ -20,9 +20,6 @@
   home.stateVersion = "20.09";
 
   home.packages = [
-    pkgs.netlify-cli
-    pkgs.terraform-landscape
-    pkgs.heroku
 
     # Own packages
     pkgs.expenses
