@@ -64,7 +64,6 @@ starship config "$1.disabled" false
 
 export HOMEBREW_NO_AUTO_UPDATE="1"
 export HOMEBREW_NO_ANALYTICS="1"
-export BROWSER="open"
 export EDITOR="vim"
 export VISUAL="vim"
 export LANG="en_US.UTF-8"
