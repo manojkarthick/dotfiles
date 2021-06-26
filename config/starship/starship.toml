@@ -88,5 +88,3 @@ symbol = ' '
 [swift]
 symbol = 'ﯣ '
 
-[k8s]
-disabled = true
