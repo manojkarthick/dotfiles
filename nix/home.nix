@@ -23,7 +23,6 @@
     pkgs.netlify-cli
     pkgs.terraform-landscape
     pkgs.heroku
-    pkgs.vagrant
 
     # Own packages
     pkgs.expenses
