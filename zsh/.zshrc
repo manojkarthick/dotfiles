@@ -1,13 +1,4 @@
 # ---------------------------------------- #
-#  Nix package manager
-# ---------------------------------------- #
-if [ -e /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh ]; then
-		. /Users/manojkarthick/.nix-profile/etc/profile.d/nix.sh;
-fi
-
-source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-
-# ---------------------------------------- #
 # Exports and Paths
 # ---------------------------------------- #
 # Use Array style path initiation for cleaner look
@@ -184,9 +175,6 @@ alias nb="newsboat"
 alias findr="open -a Finder.app"
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 alias piholeadmin="open -a Safari.app http://pi.hole/admin/"
-alias hme="home-manager edit"
-alias hms="home-manager switch"
-alias hmp="home-manager packages"
 alias vgs="vagrant global-status"
 alias sz="stat -f%z"
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
