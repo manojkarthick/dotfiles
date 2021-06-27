@@ -12,15 +12,15 @@
     ~/.newsboat/urls: config/newsboat/urls
     ~/code/.timezones: config/timezones/.timezones
     ~/.vimrc: vim/.vimrc
-    ~/bin/world-clock: scripts/tz
+    ~/bin/tz: scripts/tz
     ~/.zshrc: zsh/.zshrc
     ~/.antibody/.zsh_plugins.sh: zsh/antibody/.zsh_plugins.sh
     ~/.antibody/.zsh_plugins.txt: zsh/antibody/.zsh_plugins.txt
     ~/bin/antibody-bundle: zsh/antibody/antibody-bundle
-    ~/.config/nixpkgs/home.nix: nix/home.nix
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.wgetrc: config/wget/.wgetrc
     ~/.config/delta/themes.gitconfig: git/themes.gitconfig
+    ~/.condarc: config/conda/.condarc
 
 - create:
     - ~/code
