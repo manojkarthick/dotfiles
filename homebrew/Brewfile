@@ -14,7 +14,6 @@ brew "readline"
 brew "xz"
 brew "glib"
 brew "gnu-getopt"
-brew "goenv", args: ["HEAD"]
 brew "ruby"
 brew "libstfl"
 brew "netlify-cli"
