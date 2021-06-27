@@ -18,6 +18,7 @@
     ~/.antibody/.zsh_plugins.txt: zsh/antibody/.zsh_plugins.txt
     ~/bin/antibody-bundle: zsh/antibody/antibody-bundle
     ~/.config/starship.toml: config/starship/starship.toml
+    ~/.config/starship-git-disabled.toml: config/starship/starship-git-disabled.toml
     ~/.wgetrc: config/wget/.wgetrc
     ~/.config/delta/themes.gitconfig: git/themes.gitconfig
     ~/.condarc: config/conda/.condarc
