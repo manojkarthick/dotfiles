@@ -5,14 +5,14 @@
 # Inspired by: https://github.com/BrodieRobertson/dotfiles/blob/master/.zshenv
 typeset -U PATH path
 path=(
-		"$HOME/bin"
-		"/opt/local/bin"
-		"/opt/local/sbin"
-		"$HOME/Homebrew/bin"
-		"$HOME/Homebrew/opt/gnu-getopt/bin"
-		"$HOME/.krew/bin"
-		"$HOME/Library/Python/3.8/bin"
-		"$HOME/.tfenv/bin"
+		"$HOME/bin"								# user binaries
+		"/opt/local/bin"						# macports binaries
+		"/opt/local/sbin"						# macports system binaries
+		"$HOME/Homebrew/bin"					# homebrew binaries
+		"$HOME/Homebrew/opt/gnu-getopt/bin"		# todo: replace this.
+		"$HOME/.krew/bin"						# kubectl krew plugin manager
+		"$HOME/Library/Python/3.8/bin"			# default python. todo: remove this.
+		"$HOME/.tfenv/bin"						# manage terraform versions
 		"$path[@]"
 )
 export PATH
@@ -89,28 +89,21 @@ jump() {
 # Staging files for git using fzf
 # Inspired by: https://bluz71.github.io/2018/11/26/fuzzy-finding-in-bash-with-fzf.html
 fzf_git_add() {
-    local selections=$(
-      git status --porcelain | \
-      fzf --ansi --multi \
-          --preview 'if (git ls-files --error-unmatch {2} &>/dev/null); then
-                         git diff --color=always {2}
-                     else
-                         bat --color=always --line-range :500 {2}
-                     fi'
-      )
-    if [[ -n $selections ]]; then
-        git add --verbose $(echo "$selections" | cut -c 4- | tr '\n' ' ')
-    fi
-}
+		local selections=$(
+		git status --porcelain | \
+				fzf --ansi --multi \
+				--preview 'if (git ls-files --error-unmatch {2} &>/dev/null); then
+						git diff --color=always {2}
+				else
+						bat --color=always --line-range :500 {2}
+						fi'
+				)
+				if [[ -n $selections ]]; then
+						git add --verbose $(echo "$selections" | cut -c 4- | tr '\n' ' ')
+				fi
+		}
 
 alias gadd='fzf_git_add'
-
-# Open repository in default browser
-# NOTE: At the moment only works for ssh-cloned git repositories
-func repo(){
-	gh repo view --web
-}
-
 
 # Saving initial prompt before timestamp changes
 INITIAL_PROMPT=$PROMPT
@@ -158,8 +151,6 @@ if [ -f "$HOME/bin/google-cloud-sdk/completion.zsh.inc" ];
 then . "$HOME/bin/google-cloud-sdk/completion.zsh.inc";
 fi
 
-
-
 # ---------------------------------------- #
 #  Aliases
 # ---------------------------------------- #
@@ -167,7 +158,6 @@ fi
 alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
 alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'
-alias pq='parquet-tools'
 alias src="source $HOME/.zshrc"
 alias browse="open -a ${DEFAULT_BROWSER}"
 alias yt="youtube-dl"
@@ -295,13 +285,13 @@ eval "$(direnv hook zsh)"
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('$HOME/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+		eval "$__conda_setup"
 else
-    if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/miniconda/bin:$PATH"
-    fi
+		if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
+				. "$HOME/miniconda/etc/profile.d/conda.sh"
+		else
+				export PATH="$HOME/miniconda/bin:$PATH"
+		fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
