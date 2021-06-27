@@ -21,6 +21,7 @@
     ~/.wgetrc: config/wget/.wgetrc
     ~/.config/delta/themes.gitconfig: git/themes.gitconfig
     ~/.condarc: config/conda/.condarc
+    ~/.config/gh/config.yml: config/gh/config.yml
 
 - create:
     - ~/code
