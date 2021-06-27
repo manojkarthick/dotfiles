@@ -5,3 +5,5 @@ portupdate:
 brewfile:
 	cd homebrew; brew bundle dump --force
 
+submodules:
+	git submodule update --remote dotbot
