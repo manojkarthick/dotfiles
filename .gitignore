@@ -1,4 +1,5 @@
 .DS_Store
 install/fonts/FiraCode
 zsh/antibody/.zsh_plugins.sh
+zsh/antibody/.zsh_plugins.sh.bak
 .idea
