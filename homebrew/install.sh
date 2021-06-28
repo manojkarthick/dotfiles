@@ -6,3 +6,4 @@
 # Instead, this script downloads the homebrew tarball directly and uses the Untar Anywhere installation method.
 # See: https://docs.brew.sh/Installation#untar-anywhere
 mkdir ~/Homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/Homebrew
+
