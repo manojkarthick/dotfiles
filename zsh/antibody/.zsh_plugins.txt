@@ -1,12 +1,13 @@
 robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/command-not-found
-robbyrussell/oh-my-zsh path:plugins/docker
-zsh-users/zsh-syntax-highlighting
+# zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
+docker/cli path:contrib/completion/zsh kind:fpath
+/opt/local/share/zsh/site-functions kind:fpath
+
 
 # Unfortunately antibody does not support antigen style theme commands
 # To workaround this, we use the path module to load the theme directly
 # See github issue: https://github.com/getantibody/antibody/issues/152
-
 robbyrussell/oh-my-zsh path:lib
 robbyrussell/oh-my-zsh path:themes/gianu.zsh-theme
 
