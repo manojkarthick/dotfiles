@@ -22,6 +22,10 @@ export PATH
 # ---------------------------------------- #
 # Automatically load compinit only once per day
 # Inspired by: https://gist.github.com/ctechols/ca1035271ad134841284
+
+# use menu style tab selections
+zstyle ':completion:*' menu select
+
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 		compinit
