@@ -67,9 +67,7 @@ export DELTA_PAGER="less -R"
 
 # fzf
 [ -f /opt/local/share/fzf/shell/key-bindings.zsh ] && source "/opt/local/share/fzf/shell/key-bindings.zsh"
-export FZF_DEFAULT_OPTS='
---height 40%
---layout=reverse'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
 
 # Online cheatsheet
 function cheat(){
