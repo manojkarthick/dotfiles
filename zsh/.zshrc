@@ -152,7 +152,12 @@ fi
 # ---------------------------------------- #
 #  Aliases
 # ---------------------------------------- #
-
+alias ls="lsd"
+alias l="ls -l"
+alias la="ls -a"
+alias ll="ls -al"
+alias lla="ls -al"
+alias lt"ls -tree"
 alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
 alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'
@@ -251,6 +256,7 @@ pyenv() {
 
 # Golang
 export GOENV_ROOT="$HOME/.goenv"
+export PATH="${GOENV_ROOT}/bin:$PATH"
 goenv() {
 		eval "$(command goenv init - zsh)"
 		goenv "$@"
@@ -293,3 +299,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+
