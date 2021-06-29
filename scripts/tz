@@ -1,7 +1,7 @@
 #!/bin/sh
 # Command-line world clock
 
-: ${WORLDCLOCK_ZONES:="$HOME/code/.timezones"}
+: ${WORLDCLOCK_ZONES:="$HOME/.config/custom/.timezones"}
 : ${WORLDCLOCK_FORMAT:='+%Y-%m-%d %H:%M:%S %Z'}
 
 while read zone

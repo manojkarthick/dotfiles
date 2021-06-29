@@ -81,7 +81,7 @@ function cheat(){
 # Jump to project bookmark
 jump() {
 		local dir
-		dir=$(cat ~/code/.bookmarks| fzf ) &&
+		dir=$(cat ~/.config/custom/.bookmarks| fzf ) &&
 				cd "$dir"
 						starship_precmd
 						zle reset-prompt

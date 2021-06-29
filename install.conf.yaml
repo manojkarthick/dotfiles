@@ -4,13 +4,21 @@
 
 - clean: ['~']
 
+- create:
+    - ~/code
+    - ~/.newsboat
+    - ~/bin
+    - ~/.antibody
+    - ~/.vim/plugged
+    - ~/.config
+    - ~/.config/delta
+    - ~/.config/custom
+
 - link:
-    ~/code/.bookmarks: config/bookmarks/.bookmarks
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore_global: git/.gitignore_global
     ~/.newsboat/config: config/newsboat/config
     ~/.newsboat/urls: config/newsboat/urls
-    ~/code/.timezones: config/timezones/.timezones
     ~/.vimrc: vim/.vimrc
     ~/bin/tz: scripts/tz
     ~/.zshrc: zsh/.zshrc
@@ -23,12 +31,6 @@
     ~/.config/delta/themes.gitconfig: git/themes.gitconfig
     ~/.condarc: config/conda/.condarc
     ~/.config/gh/config.yml: config/gh/config.yml
+    ~/.config/custom/.bookmarks: config/bookmarks/.bookmarks
+    ~/.config/custom/.timezones: config/timezones/.timezones
 
-- create:
-    - ~/code
-    - ~/.newsboat
-    - ~/bin
-    - ~/.antibody
-    - ~/.vim/plugged
-    - ~/.config
-    - ~/.config/delta
