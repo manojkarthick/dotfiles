@@ -1,3 +1,10 @@
 #!/bin/zsh
 
-antibody bundle < .zsh_plugins.txt > .zsh_plugins.sh
+antibody bundle < "$HOME/.antibody/.zsh_plugins.txt" > "$HOME/.antibody/.zsh_plugins.sh"
+echo "Finished antibody bundle.\n"
+
+echo "Bundle for static loading: \n"
+cat "$HOME/.antibody/.zsh_plugins.sh"
+
+echo "\nFIN."
+
