@@ -16,7 +16,6 @@ The following ports are currently installed:
   k3d @4.4.6_0 (active)
   kalker @1.0.0_0 (active)
   kubectl-1.19 @1.19.8_0 (active)
-  lsd @0.20.1_1 (active)
   mpstats @0.2.0_0 (active)
   newsboat @2.23_0 (active)
   packer @1.7.3_0 (active)

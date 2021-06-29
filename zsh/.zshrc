@@ -152,12 +152,6 @@ fi
 # ---------------------------------------- #
 #  Aliases
 # ---------------------------------------- #
-alias ls="lsd"
-alias l="ls -l"
-alias la="ls -a"
-alias ll="ls -al"
-alias lla="ls -al"
-alias lt"ls -tree"
 alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
 alias ignore='function(){ curl -sLw "\n" https://www.gitignore.io/api/$@ ;}'
 alias cpwd='pwd|tr -d "\n"|pbcopy'

@@ -51,7 +51,6 @@ The following ports are currently installed:
   libxml2 @2.9.12_1 (active)
   libxslt @1.1.34_6 (active)
   lmdb @0.9.29_0 (active)
-  lsd @0.20.1_1 (active)
   lz4 @1.9.3_1 (active)
   mpstats @0.2.0_0 (active)
   ncurses @6.2_1 (active)
