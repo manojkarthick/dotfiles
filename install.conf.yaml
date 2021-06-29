@@ -5,32 +5,48 @@
 - clean: ['~']
 
 - create:
-    - ~/code
-    - ~/.newsboat
-    - ~/bin
-    - ~/.antibody
-    - ~/.vim/plugged
-    - ~/.config
-    - ~/.config/delta
-    - ~/.config/custom
+  - ~/code
+  - ~/.newsboat
+  - ~/bin
+  - ~/.antibody
+  - ~/.vim/plugged
+  - ~/.config
+  - ~/.config/delta
+  - ~/.config/custom
 
 - link:
-    ~/.gitconfig: git/.gitconfig
-    ~/.gitignore_global: git/.gitignore_global
+    # git
+    ~/.gitconfig: config/git/.gitconfig
+    ~/.gitignore_global: config/git/.gitignore_global
+    ~/.config/delta/themes.gitconfig: config/git/themes.gitconfig
+
+    # newsboat
     ~/.newsboat/config: config/newsboat/config
     ~/.newsboat/urls: config/newsboat/urls
-    ~/.vimrc: vim/.vimrc
-    ~/bin/tz: scripts/tz
-    ~/.zshrc: zsh/.zshrc
-    ~/.antibody/.zsh_plugins.sh: zsh/antibody/.zsh_plugins.sh
-    ~/.antibody/.zsh_plugins.txt: zsh/antibody/.zsh_plugins.txt
-    ~/bin/antibody-bundle: zsh/antibody/antibody-bundle
+
+    # vim
+    ~/.vimrc: config/vim/.vimrc
+
+    # zsh
+    ~/.zshrc: config/zsh/.zshrc
+    ~/.antibody/.zsh_plugins.sh: config/zsh/antibody/.zsh_plugins.sh
+    ~/.antibody/.zsh_plugins.txt: config/zsh/antibody/.zsh_plugins.txt
+    ~/bin/antibody-bundle: config/zsh/antibody/antibody-bundle
+
+    # starship
     ~/.config/starship.toml: config/starship/starship.toml
     ~/.config/starship-git-disabled.toml: config/starship/starship-git-disabled.toml
+
+    # wget
     ~/.wgetrc: config/wget/.wgetrc
-    ~/.config/delta/themes.gitconfig: git/themes.gitconfig
+
+    # conda
     ~/.condarc: config/conda/.condarc
+
+    # github cli
     ~/.config/gh/config.yml: config/gh/config.yml
+
+    # custom
     ~/.config/custom/.bookmarks: config/bookmarks/.bookmarks
     ~/.config/custom/.timezones: config/timezones/.timezones
-
+    ~/bin/tz: scripts/tz
