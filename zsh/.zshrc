@@ -65,9 +65,13 @@ export LANG="en_US.UTF-8"
 export WHICHMAC="Personal"
 export DELTA_PAGER="less -R"
 
-# fzf
+# fzf with Jellybeans color scheme: https://github.com/junegunn/fzf/wiki/Color-schemes#jellybeans
 [ -f /opt/local/share/fzf/shell/key-bindings.zsh ] && source "/opt/local/share/fzf/shell/key-bindings.zsh"
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse'
+export FZF_DEFAULT_OPTS='--height 40% 
+--layout=reverse
+--color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
+--color info:183,prompt:110,spinner:107,pointer:167,marker:215
+'
 
 # Online cheatsheet
 function cheat(){
