@@ -87,6 +87,9 @@ call plug#end()
 " ?: Toggle NERD Tree's quick help
 nmap <C-n> :NERDTreeToggle<CR>
 
+" Show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
 " Commentary shortcuts
 " gc - toggle comments
 autocmd FileType tf setlocal commentstring=#\ %s
