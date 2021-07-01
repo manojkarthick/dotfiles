@@ -38,7 +38,7 @@
     ~/.config/starship-git-disabled.toml: config/starship/starship-git-disabled.toml
 
     # wget
-    ~/.wgetrc: config/wget/.wgetrc
+    # ~/.wgetrc: config/wget/.wgetrc
 
     # conda
     ~/.condarc: config/conda/.condarc
