@@ -113,5 +113,9 @@ command Wq wq
 command W w
 command Q q
 
-
+" Use ruby for syntax highlighting vagrantfiles
+augroup vagrant
+  au!
+  au BufRead,BufNewFile Vagrantfile set filetype=ruby
+augroup END
 
