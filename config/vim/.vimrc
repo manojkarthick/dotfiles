@@ -42,6 +42,9 @@ autocmd VimLeave * let &t_me="\<Esc>]50;CursorShape=2\x7"
 " Change color of line numbers to grey
 highlight LineNr ctermfg=grey
 
+" Set identation for makefiles
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
