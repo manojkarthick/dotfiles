@@ -1,5 +1,6 @@
 The following ports are currently installed:
   asciinema @2.0.2_0 (active)
+  bash @5.1.8_0 (active)
   direnv @2.26.0_0 (active)
   expenses @0.2.2_0 (active)
   fzf @0.27.2_0 (active)

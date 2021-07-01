@@ -1,5 +1,6 @@
 The following ports are currently installed:
   asciinema @2.0.2_0 (active)
+  bash @5.1.8_0 (active)
   bzip2 @1.0.8_0 (active)
   curl @7.77.0_0+ssl (active)
   curl-ca-bundle @7.77.0_0 (active)
@@ -18,6 +19,7 @@ The following ports are currently installed:
   gmp @6.2.1_0 (active)
   gnupg2 @2.2.27_0+pinentry_mac (active)
   gnutls @3.6.16_1 (active)
+  go @1.16.5_0 (active)
   go2port @20201006_0 (active)
   helm-3.5 @3.5.4_0 (active)
   helm_select @0.0_0 (active)
