@@ -249,9 +249,8 @@ function rams() {
 # Inspired by: https://carlosbecker.com/posts/speeding-up-zsh/
 
 # Python
-pyenv() {
-		eval "$(command pyenv init - zsh --no-rehash)"
-		pyenv "$@"
+pyenv_lazy() {
+		eval "$(pyenv init --path)"
 }
 
 # Golang
