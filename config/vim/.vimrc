@@ -16,6 +16,10 @@ set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set ttyfast
 
+" Make backspace work like you would expect
+set backspace=indent,eol,start
+
+
 " Get the 2-space YAML as the default when hit carriage return after the colon
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
