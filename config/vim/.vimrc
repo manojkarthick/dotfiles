@@ -67,6 +67,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'thaerkh/vim-indentguides'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
