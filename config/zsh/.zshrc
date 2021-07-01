@@ -67,6 +67,7 @@ export DELTA_PAGER="less -R"
 
 # fzf with Jellybeans color scheme: https://github.com/junegunn/fzf/wiki/Color-schemes#jellybeans
 [ -f /opt/local/share/fzf/shell/key-bindings.zsh ] && source "/opt/local/share/fzf/shell/key-bindings.zsh"
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS='--height 40% 
 --layout=reverse
 --color fg:188,bg:233,hl:103,fg+:222,bg+:234,hl+:104
