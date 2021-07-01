@@ -10,6 +10,10 @@ set incsearch
 set hlsearch
 set ic
 
+" Use space as the leader key
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
 " Reduce delay in cursor redraw when exiting insert mode
 set ttimeout
 set ttimeoutlen=1
