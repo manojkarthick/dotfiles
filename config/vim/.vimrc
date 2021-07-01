@@ -72,6 +72,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -88,4 +90,12 @@ nmap <C-n> :NERDTreeToggle<CR>
 " Commentary shortcuts
 " gc - toggle comments
 autocmd FileType tf setlocal commentstring=#\ %s
+
+" fzf: search files
+nnoremap <silent> <C-f> :Files<CR>
+" nnoremap <silent> <Leader>f :Rg<CR>
+
+" fzf: search within files, ignore file names
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
 
