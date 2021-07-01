@@ -18,7 +18,7 @@
 		dd = diff --check --dirstat --find-copies --find-renames --histogram --color
 		sl = stash list --pretty=format:\"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)\"
 		discard = !git stash save --keep-index --include-untracked && git stash drop
-		l = log --oneline
+		lo = log --oneline
 		blast = !git add -A && git commit --amend --no-edit && git push -f origin master
 		branchrename = "!git branch -m $2 $3 && git push $1 :$2 $3 -u #"
 		dt = "!git tag --delete $2"
