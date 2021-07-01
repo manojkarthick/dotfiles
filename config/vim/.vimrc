@@ -100,10 +100,10 @@ autocmd FileType tf setlocal commentstring=#\ %s
 
 " fzf: search files
 nnoremap <silent> <C-f> :Files<CR>
-" nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
 
 " fzf: search within files, ignore file names
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden --glob '!.git/*' ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " Write/Quit on the capitalized variants as well
 " Source: https://coderwall.com/p/nckasg/map-w-to-w-in-vim
