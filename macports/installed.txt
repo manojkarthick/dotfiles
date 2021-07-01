@@ -108,6 +108,7 @@ The following ports are currently installed:
   ticker @4.2.0_0 (active)
   tokei @12.1.2_0 (active)
   tree @1.8.0_0 (active)
+  vim @8.2.2681_0+huge (active)
   watch @3.3.17_0 (active)
   wget @1.21.1_1+gnutls (active)
   xsv @0.13.0_0 (active)
