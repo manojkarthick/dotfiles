@@ -26,6 +26,19 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7" "SI = Insert mode
 let &t_SR = "\<Esc>]50;CursorShape=2\x7" "SR = Replace mode
 let &t_EI = "\<Esc>]50;CursorShape=0\x7" "EI = Normal mode (else)
 
+" Toggle GitGutterOnOff
+nmap <C-g> :GitGutterToggle<CR>
+
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+
+" Enable GitGutter by default
+let g:gitgutter_enabled = 1
+
 " Reset cursor on startup
 " t_EI gets executed only when exiting replace/insert mode into normal mode
 " On startup enter and immediately exit insert mode to redraw the cursor
@@ -70,7 +83,4 @@ nmap <C-n> :NERDTreeToggle<CR>
 " Commentary shortcuts
 " gc - toggle comments
 autocmd FileType tf setlocal commentstring=#\ %s
-
-" Toggle GitGutterOnOff
-nmap <C-g> :GitGutterToggle<CR>
 
