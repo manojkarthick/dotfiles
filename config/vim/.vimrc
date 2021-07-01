@@ -53,6 +53,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'thaerkh/vim-indentguides'
 
 call plug#end()
 
