@@ -20,6 +20,7 @@ The following ports are currently installed:
   mpstats @0.2.0_0 (active)
   newsboat @2.23_0 (active)
   packer @1.7.3_0 (active)
+  pipx @0.16.3_0+python39 (active)
   rclone @1.55.1_0 (active)
   reddsaver @0.3.3_0 (active)
   restic @0.12.0_1 (active)

@@ -252,6 +252,7 @@ function rams() {
 pyenv_lazy() {
 		eval "$(pyenv init --path)"
 }
+export PIPX_BIN_DIR="$HOME/bin"
 
 # Golang
 export GOENV_ROOT="$HOME/.goenv"
