@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+repository=$1
+tag=$2
+
+loading="\U1F552"
+check="\U2705"
+rocket="\U1F680"
+
+username=$(echo "${repository}" | cut -d'/' -f1)
+reponame=$(echo "${repository}" | cut -d'/' -f2)
+
+tmp_dir=$(mktemp -d)
+printf "${loading} Download from username: ${username} and repository: ${reponame} \n"
+printf "${check} Using temporary directory: ${tmp_dir} \n"
+
+cd "${tmp_dir}" || exit 1
+
+download_location="$(echo "$1" | cut -d'/' -f2).tar.gz"
+download_url="https://github.com/${repository}/archive/refs/tags/${tag}.tar.gz"
+wget --quiet -O "${download_location}" "${download_url}" > /dev/null
+if [[ $? -ne 0 ]]; then
+		echo "Download failed, exiting"
+		exit 1;
+fi
+
+rmd160=$(openssl dgst -rmd160 "${download_location}" | awk '{print $2}')
+sha256=$(openssl dgst -sha256 "${download_location}" | awk '{print $2}')
+size=$(stat -f%z "${download_location}")
+
+printf "\nGenerated output ***********\n"
+echo "The RMD160 value is: ${rmd160}"
+echo "The SHA256 value is: ${sha256}"
+echo "The size is: ${size}"
+echo "*******************************"
+
+rm -rf $tmp_dir
+
+printf "${rocket} FIN.\n"
+

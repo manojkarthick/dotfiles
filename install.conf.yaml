@@ -50,3 +50,5 @@
     ~/.config/custom/.bookmarks: config/bookmarks/.bookmarks
     ~/.config/custom/.timezones: config/timezones/.timezones
     ~/bin/tz: scripts/tz
+    ~/bin/porthash: scripts/porthash
+  
