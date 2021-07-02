@@ -22,6 +22,7 @@ folders:
 	mkdir -pv $(HOME)/.config/nvim
 	mkdir -pv $(HOME)/.config/delta
 	mkdir -pv $(HOME)/.config/custom
+	mkdir -pv $(HOME)/.config/lsd
 
 symlinks: folders
 	ln -sfn $(PWD)/config/aws/config $(HOME)/.aws/config
@@ -44,6 +45,7 @@ symlinks: folders
 	ln -sfn $(PWD)/config/gh/config.yml $(HOME)/.config/gh/config.yml
 	ln -sfn $(PWD)/config/bookmarks/.bookmarks $(HOME)/.config/custom/.bookmarks
 	ln -sfn $(PWD)/config/timezones/.timezones $(HOME)/.config/custom/.timezones
+	ln -sfn $(PWD)/config/lsd/config.yaml $(HOME)/.config/lsd/config.yaml
 	ln -sfn $(PWD)/scripts/tz $(HOME)/bin/tz
 	ln -sfn $(PWD)/scripts/porthash $(HOME)/bin/porthash
 	ln -sfn $(PWD)/scripts/emojicode $(HOME)/bin/emojicode
