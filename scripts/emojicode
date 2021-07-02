@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+
+import argparse
+
+
+def cli():
+    parser = argparse.ArgumentParser(description="Convert emoji to unicode and UTF-8")
+    parser.add_argument("emoji", type=str, help="Emoji")
+    args = parser.parse_args()
+    emoji = args.emoji
+    unicode = f"U+{ord(emoji):X}"
+    print(f"{emoji} = {unicode}")
+
+if __name__ == "__main__":
+    cli()
+
+
+
