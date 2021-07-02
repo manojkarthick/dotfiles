@@ -1,6 +1,6 @@
 robbyrussell/oh-my-zsh path:plugins/git
-# zsh-users/zsh-syntax-highlighting
 zdharma/fast-syntax-highlighting
+zsh-users/zsh-history-substring-search
 docker/cli path:contrib/completion/zsh kind:fpath
 /opt/local/share/zsh/site-functions kind:fpath
 
