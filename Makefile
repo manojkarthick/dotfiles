@@ -13,6 +13,7 @@ update: portupdate brewfile
 folders:
 	mkdir -pv $(HOME)/code
 	mkdir -pv $(HOME)/bin
+	mkdir -pv $(HOME)/.aws
 	mkdir -pv $(HOME)/.newsboat
 	mkdir -pv $(HOME)/.antibody
 	mkdir -pv $(HOME)/.vim/plugged
@@ -23,6 +24,7 @@ folders:
 	mkdir -pv $(HOME)/.config/custom
 
 symlinks: folders
+	ln -sfn $(PWD)/config/aws/config $(HOME)/.aws/config
 	ln -sfn $(PWD)/config/git/.gitconfig $(HOME)/.gitconfig
 	ln -sfn $(PWD)/config/git/.gitignore_global $(HOME)/.gitignore_global
 	ln -sfn $(PWD)/config/git/themes.gitconfig $(HOME)/.config/delta/themes.gitconfig
