@@ -1,4 +1,7 @@
-portupdate:
+portreclaim:
+	sudo port reclaim
+
+portupdate: portreclaim
 	port installed > macports/installed.txt
 	port installed requested > macports/requested.txt
 
