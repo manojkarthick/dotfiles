@@ -76,7 +76,7 @@ Plug 'LnL7/vim-nix'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
@@ -104,22 +104,10 @@ nmap <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 "------------------------------------------------------------------------------"
-"                                   GitGutter                                  "
+"                                    Signify                                   "
 "------------------------------------------------------------------------------"
-" Toggle GitGutterOnOff
-nmap <C-g> :GitGutterToggle<CR>
-
-" Use fontawesome icons as signs
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '>'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '^'
-let g:gitgutter_sign_modified_removed = '<'
-
-" Enable GitGutter by default
-let g:gitgutter_enabled = 1
-
-" Commentary shortcuts
+" default updatetime 4000ms is not good for async update
+set updatetime=100
 "------------------------------------------------------------------------------"
 "                                Vim commentary                                "
 "------------------------------------------------------------------------------"
