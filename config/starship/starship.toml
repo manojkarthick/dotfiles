@@ -14,6 +14,7 @@ disabled = true
 
 [aws]
 symbol = '  '
+disabled = true
 
 [conda]
 symbol = ' '
