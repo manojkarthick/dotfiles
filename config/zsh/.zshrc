@@ -18,13 +18,10 @@ path=(
 export PATH
 
 # ---------------------------------------- #
-#  Antibody
+#  Zsh + Antibody
 # ---------------------------------------- #
 # Automatically load compinit only once per day
 # Inspired by: https://gist.github.com/ctechols/ca1035271ad134841284
-
-# use menu style tab selections
-zstyle ':completion:*' menu select
 
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
@@ -34,6 +31,19 @@ else
 fi
 
 source "$HOME/.antibody/.zsh_plugins.sh"
+
+# set options for zsh history
+export HISTFILE="$HOME/.zsh_history"
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_SPACE
+
+# use menu style tab selections
+zstyle ':completion:*' menu select
 
 # ---------------------------------------- #
 #  cargo
