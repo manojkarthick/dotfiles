@@ -258,13 +258,30 @@ function rams() {
 # The reason the behavior has been changed is to reduce shell startup latency
 # Inspired by: https://carlosbecker.com/posts/speeding-up-zsh/
 
-# Python
+# Python --------------------------------- #
+
+# pyenv
 pyenv_lazy() {
 		eval "$(pyenv init --path)"
 }
+# pipx
 export PIPX_BIN_DIR="$HOME/bin"
 
-# Golang
+# conda
+__conda_setup="$('$HOME/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+		eval "$__conda_setup"
+else
+		if [ -f "$HOME/miniconda/etc/profile.d/conda.sh" ]; then
+				. "$HOME/miniconda/etc/profile.d/conda.sh"
+		else
+				export PATH="$HOME/miniconda/bin:$PATH"
+		fi
+fi
+unset __conda_setup
+
+
+# Golang -------------------------------- #
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="${GOENV_ROOT}/bin:$PATH"
 goenv() {
@@ -272,7 +289,7 @@ goenv() {
 		goenv "$@"
 }
 
-# Node.js
+# Node.js -------------------------------- #
 export NVM_DIR="$HOME/.nvm"
 nvm_lazy() {
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
