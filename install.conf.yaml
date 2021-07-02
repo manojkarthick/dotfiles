@@ -51,4 +51,5 @@
     ~/.config/custom/.timezones: config/timezones/.timezones
     ~/bin/tz: scripts/tz
     ~/bin/porthash: scripts/porthash
+    ~/bin/emojicode: scripts/emojicode
   
