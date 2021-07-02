@@ -1,15 +1,37 @@
+## Show help
+.PHONY: help
+help:
+	@awk 'BEGIN {FS = ":"; printf "\n Usage:\n"} \
+		/^##/ { split($$0, a, "##"); latest = a[2]; next } \
+		/^[a-zA-Z_-]+:/ { printf "  %-20s %s\n", $$1, latest; latest=""; next; } \
+		' $(MAKEFILE_LIST)
+
+## Run the default target: help
+.PHONY: default
+default: help
+
+## Reclaim any unused or unneeded ports from MacPorts
+.PHONY: portreclaim
 portreclaim:
 	sudo port reclaim
 
+## Update the list of installed and requested ports from MacPorts
+.PHONY: portupdate
 portupdate: portreclaim
 	port installed > macports/installed.txt
 	port installed requested > macports/requested.txt
 
+## Dump installed formulae and casks from Homebrew
+.PHONY: brewfile
 brewfile:
 	cd homebrew; brew bundle dump --force
 
+## Update Homebrew and MacPorts install list
+.PHONY: update
 update: portupdate brewfile
 
+## Create the folders needed for the dotfiles
+.PHONY: folders
 folders:
 	mkdir -pv $(HOME)/code
 	mkdir -pv $(HOME)/bin
@@ -24,6 +46,8 @@ folders:
 	mkdir -pv $(HOME)/.config/custom
 	mkdir -pv $(HOME)/.config/lsd
 
+## Symlinks the dotfiles to their appropriate locations
+.PHONY: symlinks
 symlinks: folders
 	ln -sfn $(PWD)/config/aws/config $(HOME)/.aws/config
 	ln -sfn $(PWD)/config/git/.gitconfig $(HOME)/.gitconfig
