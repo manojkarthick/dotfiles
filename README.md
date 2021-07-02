@@ -5,13 +5,15 @@
 
 ## Setup
 
-* This repository uses [dotbot](https://github.com/anishathalye/dotbot) for dotfiles management
-* Run `./install` to create the necessary directories and symlinks
+```
+git clone https://github.com/manojkarthick/dotfiles.git
+make symlinks
+```
 
 ### Contents
 
 ```
-├── Makefile               # Contains makefile for updating macports/homebrew/submodules data
+├── Makefile               # Contains makefile for updating macports/homebrew and symlinks
 ├── config                 # Contains configuration files for various programs in the system
 │   ├── bookmarks          # Contains the list of bookmarked folders
 │   ├── conda              # Configuration for miniconda: https://docs.conda.io/en/latest/miniconda.html
@@ -29,8 +31,6 @@
 │   ├── wget               # Configuration for wget to include some handy details: https://www.gnu.org/software/wget/
 │   └── zsh                # Contains my zsh configuration alongside antibody zsh plugins
 ├── homebrew               # Misc. information about installed Homebrew formulae and casks
-├── install                # Dotbot installation script:  https://github.com/anishathalye/dotbot
-├── install.conf.yaml      # Dotbot configruation for creating folders and symlinks for dotfiles
 ├── macports               # Misc. information about requested and installed ports from MacPorts
 └── scripts                # Random scripts for bootstrapping, frequent tasks, etc
 ```
