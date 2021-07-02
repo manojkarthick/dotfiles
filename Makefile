@@ -45,4 +45,5 @@ symlinks: folders
 	ln -sfn $(PWD)/scripts/tz $(HOME)/bin/tz
 	ln -sfn $(PWD)/scripts/porthash $(HOME)/bin/porthash
 	ln -sfn $(PWD)/scripts/emojicode $(HOME)/bin/emojicode
+	ln -sfn $(PWD)/scripts/idea $(HOME)/bin/idea
 
