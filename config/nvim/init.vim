@@ -86,6 +86,7 @@ Plug 'cometsong/CommentFrame.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'famiu/nvim-reload'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
