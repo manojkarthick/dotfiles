@@ -129,8 +129,6 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 "------------------------------------------------------------------------------"
 "                                  Jellybeans                                  "
 "------------------------------------------------------------------------------"
-colorscheme jellybeans
-
 " set background to black
 let g:jellybeans_overrides = {
 			\    'background': { 'guibg': '000000' },
@@ -138,6 +136,9 @@ let g:jellybeans_overrides = {
 
 " Enable italics
 let g:jellybeans_use_term_italics = 1
+
+" Set colorscheme to jellybeans
+colorscheme jellybeans
 
 "------------------------------------------------------------------------------"
 "                                   Lightline                                  "
