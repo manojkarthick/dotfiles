@@ -46,9 +46,6 @@ augroup END
 " NOTE: make sure this matches with the iTerm2 cursor setting you are using
 autocmd VimLeave * let &t_me="\<Esc>]50;CursorShape=2\x7"
 
-" Change color of line numbers to grey
-highlight LineNr ctermfg=grey
-
 " Set identation for makefiles
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
@@ -76,7 +73,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'LnL7/vim-nix'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-fugitive'
@@ -137,7 +134,11 @@ let g:jellybeans_overrides = {
 " Enable italics
 let g:jellybeans_use_term_italics = 1
 
-let g:airline_theme='jellybeans'
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'background': 'dark'
+      \ }
+
 
 "------------------------------------------------------------------------------"
 "                                  Easy Align                                  "
