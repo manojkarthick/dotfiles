@@ -4,11 +4,11 @@ syntax on
 set number
 set softtabstop=4
 set showcmd
-set cursorline
 set incsearch
 set hlsearch
 set ic
-set splitbelow
+set noshowcmd
+set noruler
 
 " Use space as the leader key
 nnoremap <SPACE> <Nop>
@@ -82,10 +82,9 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'cespare/vim-toml'
 Plug 'nanotech/jellybeans.vim'
-Plug 'cometsong/CommentFrame.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -108,7 +107,7 @@ let NERDTreeShowHidden=1
 "                                    Signify                                   "
 "------------------------------------------------------------------------------"
 " default updatetime 4000ms is not good for async update
-set updatetime=100
+set updatetime=500
 "------------------------------------------------------------------------------"
 "                                Vim commentary                                "
 "------------------------------------------------------------------------------"
@@ -140,25 +139,6 @@ let g:jellybeans_use_term_italics = 1
 
 let g:airline_theme='jellybeans'
 
-
-"------------------------------------------------------------------------------"
-"                                Comment Frames                                "
-"------------------------------------------------------------------------------"
-" Key     Command Name                Result
-" ---     --------------------------  ----------------------------------------
-" fcs     CommentFrameSlashes         border: //****************************//
-" fcS     CommentFrameSlashStar       border: /******************************/
-" fch     CommentFrameHashDash        border: #------------------------------#
-" fcH     CommentFrameHashEqual       border: #==============================#
-" fcq     CommentFrameQuoteDash       border: "------------------------------"
-" fcQ     CommentFrameQuoteTilde      border: "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-
-" frh     CommentRightHash            line: #~~~~~~~~~~~~~~~~~~~~~ title ~~~~~
-" frs     CommentRightSlashes         line: //~~~~~~~~~~~~~~~~~~~~ title ~~~~~
-" frS     CommentRightSlashStar       line: /*~~~~~~~~~~~~~~~~~~ title ~~~~~*/
-" frq     CommentRightQuote           line: "~~~~~~~~~~~~~~~~~~~~~ title ~~~~~
-
-
 "------------------------------------------------------------------------------"
 "                                  Easy Align                                  "
 "------------------------------------------------------------------------------"
@@ -168,37 +148,3 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-"------------------------------------------------------------------------------"
-"                                   Terminal                                   "
-"------------------------------------------------------------------------------"
-let g:term_buf = 0
-let g:term_win = 0
-function! TermToggle(height)
-    if win_gotoid(g:term_win)
-        hide
-    else
-        botright new
-        exec "resize " . a:height
-        try
-            exec "buffer " . g:term_buf
-        catch
-            call termopen($SHELL, {"detach": 0})
-            let g:term_buf = bufnr("")
-            set nonumber
-            set norelativenumber
-            set signcolumn=no
-        endtry
-        startinsert!
-        let g:term_win = win_getid()
-    endif
-endfunction
-
-
-" Toggle terminal on/off (neovim)
-nnoremap <Leader>t :call TermToggle(12)<CR>
-inoremap <Leader>t <Esc>:call TermToggle(12)<CR>
-tnoremap <Leader>t <C-\><C-n>:call TermToggle(12)<CR>
-
-" Terminal go back to normal mode
-tnoremap <Esc> <C-\><C-n>
-tnoremap :q! <C-\><C-n>:q!<CR>
