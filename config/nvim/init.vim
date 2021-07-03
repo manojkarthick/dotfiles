@@ -82,6 +82,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'cespare/vim-toml'
+Plug 'cometsong/CommentFrame.vim'
 
 call plug#end()
 
@@ -134,6 +135,9 @@ let g:jellybeans_overrides = {
 " Enable italics
 let g:jellybeans_use_term_italics = 1
 
+"------------------------------------------------------------------------------"
+"                                   Lightline                                  "
+"------------------------------------------------------------------------------"
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'background': 'dark'
@@ -148,4 +152,9 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+"------------------------------------------------------------------------------"
+"                                Comment frames                                "
+"------------------------------------------------------------------------------"
+let g:CommentFrame_SkipDefaultMappings = 1
 
