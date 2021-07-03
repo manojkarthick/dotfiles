@@ -83,6 +83,9 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'cespare/vim-toml'
 Plug 'cometsong/CommentFrame.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'famiu/nvim-reload'
 
 call plug#end()
 
