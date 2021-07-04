@@ -67,13 +67,11 @@ augroup END
 "                                    Plugins                                   "
 "------------------------------------------------------------------------------"
 
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'LnL7/vim-nix'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
-Plug 'itchyny/lightline.vim'
 Plug 'mhinz/vim-signify'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-fugitive'
@@ -87,6 +85,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'famiu/nvim-reload'
 Plug 'mhinz/vim-startify'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
