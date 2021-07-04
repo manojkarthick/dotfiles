@@ -231,6 +231,7 @@ alias vgs="vagrant global-status"
 alias sz="stat -f%z"
 alias gadd='fzf_git_add'
 alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
+alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 
