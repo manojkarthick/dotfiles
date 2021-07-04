@@ -42,6 +42,7 @@ folders:
 	mkdir -pv $(HOME)/.config
 	mkdir -pv $(HOME)/.config/starship
 	mkdir -pv $(HOME)/.config/nvim
+	mkdir -pv $(HOME)/.config/nvim/plugged
 	mkdir -pv $(HOME)/.config/delta
 	mkdir -pv $(HOME)/.config/custom
 	mkdir -pv $(HOME)/.config/lsd
