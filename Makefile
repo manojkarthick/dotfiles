@@ -63,6 +63,7 @@ symlinks: folders
 	ln -sfn $(PWD)/config/zsh/antibody/.zsh_plugins.sh $(HOME)/.antibody/.zsh_plugins.sh
 	ln -sfn $(PWD)/config/zsh/antibody/antibody-bundle $(HOME)/bin/antibody-bundle
 	ln -sfn $(PWD)/config/zsh/antibody/antibody-install $(HOME)/bin/antibody-install
+	ln -sfn $(PWD)/config/tmux/tmux.conf $(HOME)/.tmux.conf
 	ln -sfn $(PWD)/config/starship/starship.toml $(HOME)/.config/starship/starship.toml
 	ln -sfn $(PWD)/config/starship/starship-git-disabled.toml $(HOME)/.config/starship/starship-git-disabled.toml
 	ln -sfn $(PWD)/config/wget/.wgetrc $(HOME)/.wgetrc
