@@ -45,6 +45,7 @@ folders:
 	mkdir -pv $(HOME)/.config/delta
 	mkdir -pv $(HOME)/.config/custom
 	mkdir -pv $(HOME)/.config/lsd
+	mkdir -pv $(HOME)/.config/alacritty
 
 ## Symlinks the dotfiles to their appropriate locations
 .PHONY: symlinks
@@ -70,6 +71,7 @@ symlinks: folders
 	ln -sfn $(PWD)/config/bookmarks/.bookmarks $(HOME)/.config/custom/.bookmarks
 	ln -sfn $(PWD)/config/timezones/.timezones $(HOME)/.config/custom/.timezones
 	ln -sfn $(PWD)/config/lsd/config.yaml $(HOME)/.config/lsd/config.yaml
+	ln -sfn $(PWD)/config/alacritty/alacritty.yml $(HOME)/.config/alacritty/alacritty.yml
 	ln -sfn $(PWD)/scripts/tz $(HOME)/bin/tz
 	ln -sfn $(PWD)/scripts/porthash $(HOME)/bin/porthash
 	ln -sfn $(PWD)/scripts/emojicode $(HOME)/bin/emojicode
