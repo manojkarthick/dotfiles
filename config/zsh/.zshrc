@@ -232,6 +232,9 @@ alias sz="stat -f%z"
 alias gadd='fzf_git_add'
 alias bmadd='echo "$(pwd)" >> $HOME/code/.bookmarks'
 alias tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+alias neovim="nvim"
+alias vim="nvim"
+alias plainvim="/opt/local/bin/vim"
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 
 
