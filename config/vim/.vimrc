@@ -1,3 +1,8 @@
+"------------------------------------------------------------------------------"
+"                                   OBSOLETE                                   "
+"------------------------------------------------------------------------------"
+" I've switched over to neovim with their 0.5 release. Check out
+" config/nvim/init.vim for my neovim configuration.
 filetype plugin indent on
 syntax on
 
