@@ -86,6 +86,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'famiu/nvim-reload'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
